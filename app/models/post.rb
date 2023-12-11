@@ -4,13 +4,13 @@ class Post < ApplicationRecord
   has_many :likes
 
   def mostrecentcomments
-     omments.where(post_id: self[:id]).order(created_at: :desc).limit(5)
+    omments.where(post_id: self[:id]).order(created_at: :desc).limit(5)
   end
   after_create :incrementpostcounter
 
   private
 
   def incrementpostcounter
-   author.increment!(posts_counter: user.posts.size)
+    author.increment!(posts_counter: user.posts.size)
   end
 end
