@@ -14,8 +14,8 @@ default: &default
 development:
   <<: *default
   # database: storage/development.sqlite3
-  database: blog_development
-  database: blog_development
+  database: blog_app
+  database: blog_app
   database adapter: postgresql
   username: izebiafe
   password: Sparklerd13
