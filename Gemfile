@@ -46,11 +46,6 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
-end
-
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
@@ -64,12 +59,16 @@ group :development do
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'factory_bot_rails'
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers'
 end
 
 gem 'pg'
