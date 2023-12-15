@@ -2,7 +2,7 @@
     <div class="container">
             <div class="card my-4">
                 <div class="card-header post-heading">
-                    <h4># <%=@post.Title%></h4> <h4>Comments: <%=@post.comments_count%> Likes: <%=@post.likes_count%></h4>
+                    <h4># <%=@post.title%></h4> <h4>Comments: <%=@post.comments_count%> Likes: <%=@post.likes_count%></h4>
                 </div>
                 <div class="card-body"> <p><%=@post.text%></p></div>
                 <div class="media-info">
@@ -26,9 +26,9 @@
                                     <% @post.recent_comment.each do |comment| %>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0"><img class="rounded-circle"
-                                                    src="<%=comment.user.photo%>" width="50" height="50" alt="..." /></div>
+                                                    src="<%=@user.photo%>" width="50" height="50" alt="..." /></div>
                                             <div class="ms-3">
-                                                <div class="fw-bold"><%=comment.user.name%></div>
+                                                <div class="fw-bold"><%=@user.name%></div>
                                                 <p><%=comment.text%></p>
                                             </div>
                                         </div>
@@ -45,4 +45,4 @@
             <a href="/users/<%=@post.author_id%>/posts"><button class="btn btn-success" type="button">Back to Post</button></a>
         </div>
     </div>
-</section> 
+</section>
