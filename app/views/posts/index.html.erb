@@ -6,13 +6,13 @@
         <% @posts.each do |post| %> 
             <div class="card my-4">
                 <div class="card-header">
-                    <h4># <%= link_to post.Title, user_post_path(@user, post) %></h4>
+                    <h4># <%= link_to post.title, user_post_path(@user, post) %></h4>
                 </div>
                 <div class="card-body"><p class="mt-2"><%= truncate(post.text, length: 200, omission: '...') %></p></div>
                 <div class="media-info">
                     <ul>
-                        <li><a href="#">Comments: <%=post.comments_count.present? ? post.comments_count : 0%></a></li>
-                        <li><a href="#">Likes: <%=post.likes_count.present? ? post.comments_count : 0%></a></li>
+                        <li><a href="#">Comments: <%=post.comments_count%></a></li>
+                        <li><a href="#">Likes: <%=post.likes_count%></a></li>
                     </ul>
                 </div>
                 <div class="accordion">
@@ -26,14 +26,13 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                             <div class="card-body">
                                 <!-- Single comment-->
-                                <%= link_to "Add a comment", new_user_post_comment_path(post_id: post.id, user_id: @user.id), class: "btn btn-primary"%>
                                 <%if post.recent_comment.count > 0%>
                                     <% post.recent_comment.each do |comment| %>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0"><img class="rounded-circle"
-                                                    src="<%=comment.author.photo%>" width="50" height="50" alt="..." /></div>
+                                                    src="<%=comment.user.photo%>" width="50" height="50" alt="..." /></div>
                                             <div class="ms-3">
-                                                <div class="fw-bold"><%=comment.author.name%></div>
+                                                <div class="fw-bold"><%=comment.user.name%></div>
                                                 <p><%=comment.text%></p>
                                             </div>
                                         </div>
