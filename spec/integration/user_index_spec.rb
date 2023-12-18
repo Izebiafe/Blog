@@ -44,6 +44,5 @@ RSpec.describe 'userpage#index', type: :feature do
         within(el) { expect(page).to have_current_path(user_post_path(post.author, post)) }
       end
     end
-
   end
 end
