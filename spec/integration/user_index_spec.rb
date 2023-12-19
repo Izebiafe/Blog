@@ -36,15 +36,18 @@ RSpec.describe 'userpage#index', type: :feature do
         expect(page).to have_css("img[src='#{user.photo}']")
       end
     end
+
     it 'can check the amount of posts a user has written.' do
       @users.each do |user|
         expect(page).to have_content(user.posts_count.to_s)
       end
     end
-    it 'redirects me to that post\'s show page when I click on a post' do
+
+    it 'can navigate to user profile pages.' do
       page.all('div.col-lg-12.border.border-dark').each_with_index do |el, _i|
-        post = Post.find_by(title: el.find('title-selector').text)
-        within(el) { expect(page).to have_current_path(user_post_path(post.author, post)) }
+        user_name = el.find('title').text
+        click_link(user_name)
+        expect(page).to have_current_path(user_path(User.find_by(name: user_name)))
       end
     end
   end
