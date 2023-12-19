@@ -124,12 +124,11 @@ To run tests, run the following command:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Afimia Fidelis Izebiafe**
+👤 **Siddhartha Ghosh**
 
 - GitHub: [@Izebiafe](https://github.com/Izebiafe)
 - Twitter: [@Izebiafe](https://twitter.com/Izebiafe)
 - LinkedIn: [Izebiafe](https://www.linkedin.com/in/Izebiafe)
-
-👤 **Siddhartha Ghosh**
 
 - GitHub: [@siddghosh108](https://github.com/siddghosh108)
 - LinkedIn: [@siddhartha-ghosh-65902718](https://www.linkedin.com/in/siddhartha-ghosh-65902718/)
